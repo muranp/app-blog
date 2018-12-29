@@ -26,10 +26,10 @@ export default {
           content: `${process.env.DOMAIN_NAME}${this.$route.path}`
         },
         // TODO: add image
-        // {
-        //   property: "og:image",
-        //   content: `${this.currentPost.fields.headImage.fields.file.url}`
-        // },
+        {
+          property: "og:image",
+          content: `${process.env.HEAD_IMAGE_DEFAULT}`
+        },
         {
           property: "og:description",
           content: `${process.env.META_OG_DESCRIPTION}`
