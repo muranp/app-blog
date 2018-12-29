@@ -1,0 +1,9 @@
+module.exports = {
+  DOMAIN_NAME: "https://oungo.net",
+
+  META_DESCRIPTION: "まだ追いコンで消耗してるの？",
+  META_OG_DESCRIPTION: "追いコン追うンゴ公式サイト",
+  META_TITLE: "追いコン追うンゴ",
+  META_SITENAME: "追いコン追うンゴ",
+  META_KEYWORDS: "追いコン 追うンゴ ブグ 趣味 遊び 旅 北海道 fuse nakakey nnishi 48 oungo blog machine learning statistics probability ",
+};
