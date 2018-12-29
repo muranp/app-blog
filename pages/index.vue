@@ -1,13 +1,39 @@
 <template>
-  <top />
+  <top :data="fetchedData" />
 </template>
 
 <script>
 import Top from "~/components/templates/Top";
 
+import { createClient } from "~/plugins/contentful.js";
+const client = createClient();
+
 export default {
   components: {
     Top
+  },
+  async asyncData({ error }) {
+    try {
+      // 最新の記事を取得する
+      const res = await Promise.all([
+        client.getEntries({
+          content_type: process.env.CTF_IMAGE_LIST_TYPE_ID,
+          'sys.id': process.env.CTF_TINDER_IMAGES_SYSTEM_ID,
+        })
+      ]);
+      if (res[0]["items"].length) {
+        return {
+          fetchedData: {
+            tinderImages: res[0]["items"][0]["fields"]
+          }
+        };
+      } else {
+        throw "no data";
+      }
+    } catch (err) {
+      console.error("[ERROR] ", err);
+      error({ statusCode: 404, message: "ページが見つかりません" });
+    }
   },
   head() {
     return {

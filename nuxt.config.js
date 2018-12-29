@@ -53,9 +53,15 @@ module.exports = {
    */
   env: envSetPub,
   /*
+   ** plugins
+   */
+  plugins: [
+    // { src: "~/plugins/stack", ssr: false }
+  ],
+  /*
    ** modules
    */
-  modules: ["@nuxtjs/dotenv"],
+  modules: ["@nuxtjs/dotenv", "nuxt-buefy"],
   /*
    ** Build configuration
    */
