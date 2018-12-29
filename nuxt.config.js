@@ -4,12 +4,10 @@ console.log("[NODE_ENV] ", environment);
 require("dotenv").config();
 const envSetPub = require(`./.env.public.js`);
 
-console.log("process.env", process.env)
-
 const contentful = require("contentful");
 const client = contentful.createClient({
   space: process.env.CTF_SPACE_ID,
-  accessToken: process.env.CTF_SPACE_ID
+  accessToken: process.env.CTF_CDA_ACCESS_TOKEN
 });
 
 module.exports = {
