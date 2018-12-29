@@ -24,16 +24,28 @@ export default {
   data() {
     return {
       images: null
-    }
+    };
   },
   async created() {
-    const tinderImages = this.data['tinderImages']["images"];
+    const tinderImages = this.data["tinderImages"]["images"];
     const toPassArray = tinderImages.map((elm, index) => {
       return {
-          html: `<img src="${elm.fields.file.url}" alt="${index}">`
+        html: `<img src="${elm.fields.file.url}" alt="${index}">`
+      };
+    });
+    this.images = this.shuffleArray(toPassArray)
+    // this.images = toPassArray;
+  },
+  methods: {
+    shuffleArray(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var r = Math.floor(Math.random() * (i + 1));
+        var tmp = array[i];
+        array[i] = array[r];
+        array[r] = tmp;
       }
-    })
-    this.images = toPassArray;
+      return array
+    }
   }
 };
 </script>
