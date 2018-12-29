@@ -28,7 +28,7 @@ export default {
         // TODO: add image
         {
           property: "og:image",
-          content: `${process.env.HEAD_IMAGE_DEFAULT}`
+          content: `${process.env.META_HEAD_IMAGE_DEFAULT}`
         },
         {
           property: "og:description",
