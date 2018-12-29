@@ -40,7 +40,7 @@ module.exports = {
           content_type: process.env.CTF_BLOG_POST_TYPE_ID
         })
         .then(entries => {
-          return [...entries.items.map(entry => `posts/${entry.fields.url}`)];
+          return [...entries.items.map(entry => `posts/${entry.fields.slug}`)];
         });
     }
   },
@@ -56,7 +56,6 @@ module.exports = {
    ** plugins
    */
   plugins: [
-    // { src: "~/plugins/stack", ssr: false }
   ],
   /*
    ** modules

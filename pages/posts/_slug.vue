@@ -57,7 +57,6 @@ export default {
           "fields.slug": params.slug
         })
       ]);
-      console.log(res)
       if (res[0]["items"].length) {
         return {
           currentPost: res[0]["items"][0]["fields"]

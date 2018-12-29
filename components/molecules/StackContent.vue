@@ -25,7 +25,8 @@
 </template>
 
 <script>
-import stack from "~/node_modules/vue-tantan-stack/src/components/stack.vue";
+// import stack from "~/node_modules/vue-tantan-stack/src/components/stack.vue";
+import stack from "~/components/atoms/stack.vue"
 
 export default {
   components: {
@@ -77,7 +78,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .stack-wrapper {
   margin: 0 auto;
   position: relative;
