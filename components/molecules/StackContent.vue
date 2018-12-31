@@ -27,6 +27,7 @@
 <script>
 // import stack from "~/node_modules/vue-tantan-stack/src/components/stack.vue";
 import stack from "~/components/atoms/stack.vue"
+import { mapActions } from "vuex"
 
 export default {
   components: {
@@ -68,12 +69,18 @@ export default {
     }, 2000);
   },
   methods: {
+    ...mapActions("util", ["addCount"]),
     prev() {
       this.$refs.stack.$emit("prev");
+      this.count()
     },
     next() {
       this.$refs.stack.$emit("next");
-    }
+      this.count()
+    },
+    count() {
+      this.addCount()
+    },
   }
 };
 </script>

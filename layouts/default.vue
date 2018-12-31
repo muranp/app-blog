@@ -11,5 +11,9 @@ body {
     "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "MS ゴシック", "MS Gothic",
     sans-serif;
 }
+:root {
+  --main-color: #34495e;
+  --main-gray: #f9f9f9;
+}
 </style>
 
